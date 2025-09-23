@@ -23,7 +23,7 @@ export default function Contact() {
       // Replace with your API route or service if you add one later:
       console.log('Form submitted:', { name, email, message })
       // Optional: simple mailto fallback
-      const mailto = `mailto:ykarlosh@gmail.com?subject=Portfolio%20Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nReply to: ' + email)}`
+      const mailto = `mailto:karloshyadav18@gmail.com?subject=Portfolio%20Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nReply to: ' + email)}`
       window.location.href = mailto
     } finally {
       setSubmitting(false)
