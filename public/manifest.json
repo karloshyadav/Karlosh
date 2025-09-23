@@ -1,0 +1,29 @@
+{
+  "name": "Vân Thư",
+  "short_name": "Vthu",
+  "icons": [
+    {
+      "src": "./bg_1.png",
+      "sizes": "192x192",
+      "type": "image/jpg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./bg_3.jpg",
+      "sizes": "384x384",
+      "type": "image/jpg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./bg_1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
