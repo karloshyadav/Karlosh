@@ -1,65 +1,75 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub } from "react-icons/fa";
 
-// === Karlosh's Projects ===
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  features: string[];
+  tags: string[];
+  duration: string;
+  githubUrl: string;
+  imageSrc: string;
+}
+
+const projects: Project[] = [
   {
     title: "Heart Disease Prediction System",
     description:
-      "A hybrid machine learning system that predicts heart disease likelihood. Focused on data balancing and model interpretability.",
+      "Hybrid ML system that predicts heart disease likelihood using SMOTE for data balancing and SHAP for interpretability.",
     features: [
-      "Implemented SMOTE for class balancing",
-      "Applied SHAP for model explainability",
-      "Optimized models with Grid Search CV",
+      "SMOTE for class balancing",
+      "SHAP for model explainability",
+      "Optimized with Grid Search CV",
     ],
     tags: ["Python", "Scikit-learn", "SMOTE", "SHAP", "GridSearchCV"],
     duration: "Jul 2023 – Mar 2024",
-    githubUrl: "https://github.com/karloshyadav/heart-disease-prediction", // replace if different
-    imageSrc: "/heart.jpg",
+    githubUrl: "https://github.com/karloshyadav/heart-disease-prediction",
+    imageSrc: "/heart.jpg", // must be inside /public
   },
   {
     title: "Health Guard — AI-Powered Disease Monitoring",
     description:
-      "IoT-based system to monitor chronic patients and predict complications in real-time, providing early warnings and health insights.",
+      "IoT-based system to monitor chronic patients and predict complications in real-time, with personalized health alerts.",
     features: [
-      "Integrated sensors for live monitoring",
-      "Machine learning models for risk detection",
-      "Delivered personalized health alerts",
+      "IoT sensors integration",
+      "Machine learning risk detection",
+      "Personalized early warnings",
     ],
     tags: ["IoT", "Python", "Machine Learning", "AWS"],
     duration: "Nov 2022 – Apr 2023",
-    githubUrl: "https://github.com/karloshyadav/health-guard", // replace if different
+    githubUrl: "https://github.com/karloshyadav/health-guard",
     imageSrc: "/health.jpg",
   },
   {
     title: "Vehicle Care Manager",
     description:
-      "A web application to track vehicle maintenance schedules, send reminders, and log repair/service history for better care management.",
+      "Web app to track vehicle maintenance schedules, send reminders, and log repair/service history.",
     features: [
-      "Dashboard for vehicles and service records",
-      "Automated reminders for service dates",
-      "Reports on cost and maintenance trends",
+      "Dashboard for vehicles & service records",
+      "Automated reminders",
+      "Maintenance cost reports",
     ],
     tags: ["ReactJS", "Node.js", "MongoDB", "Tailwind CSS"],
     duration: "2023",
-    githubUrl: "https://github.com/karloshyadav/vehicle-care-manager", // replace if different
+    githubUrl: "https://github.com/karloshyadav/vehicle-care-manager",
     imageSrc: "/vehicle.jpg",
   },
   {
     title: "Portfolio Website",
     description:
-      "My personal portfolio showcasing projects, skills, and experience. Built with modern web tools and responsive design.",
+      "Personal portfolio showcasing my projects, skills, and experiences.",
     features: [
       "Responsive UI with Tailwind + React",
       "Dynamic project cards and timeline",
       "Deployed on Vercel with custom domain",
     ],
-    tags: ["ReactJS", "Next.js", "Tailwind CSS"],
+    tags: ["Next.js", "ReactJS", "Tailwind CSS"],
     duration: "2024 – Ongoing",
-    githubUrl: "https://github.com/karloshyadav/portfolio", // replace if different
+    githubUrl: "https://github.com/karloshyadav/portfolio",
     imageSrc: "/portfolio.png",
   },
 ];
@@ -69,52 +79,59 @@ const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba
 
 export default function Projects() {
   const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div className="md:ml-40 px-4 md:px-0 lg:mt-20">
       <h3 className="mb-8 text-xl md:text-4xl text-white font-semibold">
         Projects
       </h3>
+
       {projects.map((project, index) => (
         <motion.div
+          key={project.title}
           initial={{ y: 50 }}
           animate={{ y: 0 }}
           viewport={{ amount: 0.5 }}
           whileHover={{ y: -10, transition: { duration: 0.2 } }}
           transition={{ duration: 0.5, ease: "easeIn", delay: 0.1 * index }}
-          key={index}
         >
           <div className="card flex flex-col lg:flex-row lg:gap-12 justify-between items-start lg:items-center px-8 mb-12">
+            {/* Left Side */}
             <div className="max-w-prose gray font-medium text-lg flex flex-col gap-4 w-full lg:w-1/2 mb-8 lg:mb-0">
               <h1 className="text-white text-2xl mt-4">{project.title}</h1>
               <p className="gray text-sm md:text-md leading-relaxed">
                 {project.description}
               </p>
-              <p>Features:</p>
+              <p className="font-semibold">Features:</p>
               <ul className="text-sm md:text-md space-y-1">
-                {project.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center">
+                {project.features.map((feature, i) => (
+                  <li key={i} className="flex items-center">
                     <span className="text-[#607b96] mr-2">*</span>
                     <p className="md:text-md text-sm">{feature}</p>
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap gap-4">
-                <ul className="tags">
-                  {project.tags.map((tag, index) => (
-                    <li key={index}>
-                      <a href="#" className="tag">{tag}</a>
-                    </li>
-                  ))}
-                </ul>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-gray-800 text-gray-300 rounded-lg text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
 
-              <div className="flex justify-center items-center md:items-start md:justify-start flex-col sm:flex-row gap-4 md:mb-4">
+              <div className="flex items-center gap-4 mt-2">
                 <Link href={project.githubUrl} target="_blank">
-                  <FaGithub size={30} color="#fff" />
+                  <FaGithub className="w-7 h-7 text-white" />
                 </Link>
-                <p className="text-gray-400 mt-2 ml-auto">{project.duration}</p>
+                <p className="text-gray-400">{project.duration}</p>
               </div>
             </div>
+
+            {/* Right Side (Image) */}
             <motion.div
               initial={false}
               animate={
@@ -123,16 +140,16 @@ export default function Projects() {
                   : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
               }
               transition={{ duration: 1, delay: 0.5 }}
-              className="w-full lg:w-1/2 lg:pb-0 pb-4 lg:mt-0"
+              className="w-full lg:w-1/2"
             >
               <Image
                 onLoad={() => setImageLoaded(true)}
                 src={project.imageSrc}
-                alt={`${project.title} project`}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                style={{ borderRadius: '1rem' }}
+                alt={`${project.title} preview`}
                 width={1000}
                 height={750}
+                style={{ borderRadius: "1rem" }}
+                className="object-cover"
               />
             </motion.div>
           </div>
