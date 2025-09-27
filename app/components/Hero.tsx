@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const RESUME_URL =
   process.env.NEXT_PUBLIC_RESUME_URL ??
-  "https://www.linkedin.com/in/karloshyadav/details/featured/";
+  "/assets/cv.pdf";
 
 export default function Hero() {
   return (
@@ -63,11 +63,37 @@ export default function Hero() {
               >
                 GitHub
               </Link>
+              <Link
+                href="https://www.instagram.com/karloshyadav/"
+                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </Link>
+              <Link
+                href="https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"
+                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CricHeroes
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="container-profile lg:mb-0 md:mb-12">
+          <div className="absolute inset-0 -z-10 hidden lg:block pointer-events-none">
+            <Image
+              src="/assets/bg_1.png"
+              alt="Abstract gradient backdrop"
+              fill
+              className="object-contain opacity-20"
+              sizes="(min-width: 1024px) 640px"
+              priority
+            />
+          </div>
           <div className="profile-glow-2"></div>
           <div className="profile-glow"></div>
 
@@ -80,7 +106,7 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-full ring-1 ring-white/10 shadow-[0_40px_100px_-23px_#13adc7] bg-[#0f1624]
                             w-64 h-64 md:w-80 md:h-80 lg:w-[600px] lg:h-[600px]">
               <Image
-                src="/assets/profile.jpg"
+                src="/assets/profile.png"
                 alt="Karlosh Yadav"
                 fill
                 className="object-cover"

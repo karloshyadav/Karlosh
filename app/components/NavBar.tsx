@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { GiCricketBat } from "react-icons/gi";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function NavBar() {
@@ -65,11 +66,21 @@ export default function NavBar() {
           </ScrollLink>
         </div>
         <div className="flex gap-8 items-center   justify-center  md:order-3 order-2">
-          <Link href={"https://www.linkedin.com/in/karloshyadav/"} target="_blank">
+          <Link href={"https://www.linkedin.com/in/karloshyadav/"} target="_blank" aria-label="Karlosh on LinkedIn">
             <FaLinkedin className="md:w-7 w-6 h-6 md:h-7 text-white" />
           </Link>
-          <Link href={"https://github.com/karloshyadav"} target="_blank">
+          <Link href={"https://github.com/karloshyadav"} target="_blank" aria-label="Karlosh on GitHub">
             <FaGithub className="md:w-7 md:h-7 w-6 h-6  text-white" />
+          </Link>
+          <Link href={"https://www.instagram.com/karloshyadav/"} target="_blank" aria-label="Karlosh on Instagram">
+            <FaInstagram className="md:w-7 md:h-7 w-6 h-6 text-white" />
+          </Link>
+          <Link
+            href={"https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"}
+            target="_blank"
+            aria-label="Karlosh on CricHeroes"
+          >
+            <GiCricketBat className="md:w-7 md:h-7 w-6 h-6 text-white" />
           </Link>
         </div>
       </div>

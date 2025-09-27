@@ -4,7 +4,8 @@ import Link from "next/link";
 import { Input } from '@mui/base/Input';
 import { Button } from '@mui/base/Button';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { GiCricketBat } from "react-icons/gi";
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -105,6 +106,17 @@ export default function Contact() {
                 {submitting ? 'Sending…' : 'Send'}
               </Button>
             </form>
+            <p className="text-center text-sm text-white/80">
+              Prefer a quick overview?{" "}
+              <Link
+                href="/assets/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#13adc7] hover:underline"
+              >
+                Download my CV
+              </Link>
+            </p>
           </div>
         </div>
       </div>
@@ -132,11 +144,21 @@ export default function Contact() {
             <a href="tel:+919151381254" className="hover:text-[#13adc7]">+91 91513 81254</a>
           </div>
           <div className="flex gap-6">
-            <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn">
+            <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn" target="_blank">
               <FaLinkedin className="md:w-7 md:h-7 w-6 h-6 text-white" />
             </Link>
-            <Link href={"https://github.com/karloshyadav"} aria-label="Karlosh on GitHub">
+            <Link href={"https://github.com/karloshyadav"} aria-label="Karlosh on GitHub" target="_blank">
               <FaGithub className="md:w-7 md:h-7 w-6 h-6 text-white" />
+            </Link>
+            <Link href={"https://www.instagram.com/karloshyadav/"} aria-label="Karlosh on Instagram" target="_blank">
+              <FaInstagram className="md:w-7 md:h-7 w-6 h-6 text-white" />
+            </Link>
+            <Link
+              href={"https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"}
+              aria-label="Karlosh on CricHeroes"
+              target="_blank"
+            >
+              <GiCricketBat className="md:w-7 md:h-7 w-6 h-6 text-white" />
             </Link>
           </div>
         </div>
