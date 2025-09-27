@@ -1,6 +1,7 @@
 'use client';
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const RESUME_URL =
   process.env.NEXT_PUBLIC_RESUME_URL ??
@@ -75,10 +76,15 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            <div className="profile-image aspect-square flex items-center justify-center bg-[#0f1624] text-6xl font-semibold text-white shadow-[0_40px_100px_-23px_#13adc7] ring-1 ring-white/10">
-              <span className="bg-gradient-to-br from-[#38bdf8] via-[#6366f1] to-[#ec4899] bg-clip-text text-transparent">
-                KY
-              </span>
+            <div className="profile-image aspect-square flex items-center justify-center bg-[#0f1624] shadow-[0_40px_100px_-23px_#13adc7] ring-1 ring-white/10 overflow-hidden rounded-full">
+              <Image
+                src="/assets/profile.jpg" // <-- put your image here
+                alt="Karlosh Yadav"
+                width={300}
+                height={300}
+                className="object-cover"
+                priority
+              />
             </div>
           </motion.div>
         </div>
