@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# portfolio binaries kept outside of git
+public/cv.pdf
+public/Karlosh_Yadav_Resume.pdf
+public/karlosh-hero.png
+public/projects/

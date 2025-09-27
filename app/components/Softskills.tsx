@@ -32,11 +32,11 @@ const TextLoader: React.FC<TextLoaderProps> = ({ type, text }) => {
 
 const Softskills: React.FC = () => {
   const loaders: { type: LoaderVariant; text: string }[] = [
-    { type: "uia-text-loader-type-1", text: "Leadership" },
-    { type: "uia-text-loader-type-2", text: "Teamwork" },
-    { type: "uia-text-loader-type-3", text: "Communication" },
-    { type: "uia-text-loader-type-1", text: "Problem-solving" },
-    { type: "uia-text-loader-type-2", text: "Analytical thinking" },
+    { type: "uia-text-loader-type-1", text: "Inclusive leadership" },
+    { type: "uia-text-loader-type-2", text: "Community building" },
+    { type: "uia-text-loader-type-3", text: "Empathetic communication" },
+    { type: "uia-text-loader-type-1", text: "Analytical problem-solving" },
+    { type: "uia-text-loader-type-2", text: "Cross-functional collaboration" },
     { type: "uia-text-loader-type-3", text: "Adaptability" },
     // Optional extras you can toggle in/out:
     // { type: "uia-text-loader-type-1", text: "Time management" },
