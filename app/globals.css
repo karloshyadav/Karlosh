@@ -29,6 +29,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  min-height: 100vh;
+  background: linear-gradient(rgba(15, 22, 36, 0.88), rgba(15, 22, 36, 0.88)),
+    url("/assets/iisc.jpeg") center/cover no-repeat fixed;
+}
+
 .cursor {
   position: fixed;
   pointer-events: none;
