@@ -78,7 +78,7 @@ export default function Hero() {
           >
             <div className="profile-image aspect-square flex items-center justify-center bg-[#0f1624] shadow-[0_40px_100px_-23px_#13adc7] ring-1 ring-white/10 overflow-hidden rounded-full">
               <Image
-                src="/assets/profile.jpg" // <-- put your image here
+                src="/assets/profile.png" // <-- put your image here
                 alt="Karlosh Yadav"
                 width={300}
                 height={300}
