@@ -27,7 +27,7 @@ export default function Hero() {
           </p>
 
           <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-8">
-            My honours thesis delivered a <b>Heart Disease Prediction System</b> powered by Python, SMOTE, and SHAP, and internships at{' '}
+            My honours thesis delivered a <b>Heart Disease Prediction System</b> powered by Python, SMOTE, and SHAP, and internships at{" "}
             <b>Next24 Technology</b> and <b>Relanto Software</b> sharpened my product intuition. I’m eager to contribute across data,
             front-end, and full-stack teams where empathy and experimentation meet.
           </p>
@@ -76,17 +76,18 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-           <div className="profile-image aspect-square flex items-center justify-center bg-[#0f1624] shadow-[0_40px_100px_-23px_#13adc7] ring-1 ring-white/10 overflow-hidden rounded-full w-[600px] h-[600px]">
-  <Image
-    src="/assets/profile.jpg"
-    alt="Karlosh Yadav"
-    width={600}
-    height={600}
-    className="object-cover"
-    priority
-  />
-</div>
-
+            {/* Big circular avatar: ~600x600 on large screens, smaller on mobile */}
+            <div className="relative overflow-hidden rounded-full ring-1 ring-white/10 shadow-[0_40px_100px_-23px_#13adc7] bg-[#0f1624]
+                            w-64 h-64 md:w-80 md:h-80 lg:w-[600px] lg:h-[600px]">
+              <Image
+                src="/assets/profile.jpg"
+                alt="Karlosh Yadav"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 600px, (min-width: 768px) 320px, 256px"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </div>
