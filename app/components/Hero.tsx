@@ -19,16 +19,16 @@ export default function Hero() {
             Builder of data-driven, human-centered products
           </p>
 
-          <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-4 capitalize-sentences">
+          <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-4">
             Incoming M.Tech student in Computer Science at <b>IISc Bangalore</b> and recent CSE graduate from CMRIT (VTU).
             I specialise in crafting responsive interfaces, translating messy datasets into insight, and shipping
             machine-learning features that people trust.
           </p>
 
-          <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-8 capitalize-sentences">
-            My honours thesis delivered a <b>Heart Disease Prediction System</b> powered by Python, SMOTE, and SHAP, and internships at
-            <b> Next24 Technology</b> and <b>Relanto Software</b> sharpened my product intuition. I’m eager to contribute across data, front-end,
-            and full-stack teams where empathy and experimentation meet.
+          <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-8">
+            My honours thesis delivered a <b>Heart Disease Prediction System</b> powered by Python, SMOTE, and SHAP, and internships at{' '}
+            <b>Next24 Technology</b> and <b>Relanto Software</b> sharpened my product intuition. I’m eager to contribute across data,
+            front-end, and full-stack teams where empathy and experimentation meet.
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start lg:mx-0 mx-4">

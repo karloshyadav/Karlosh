@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Cursor from "./components/Cursor";
 import { Analytics } from "@vercel/analytics/react";
@@ -10,9 +10,25 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Vân Thư Software Enginner ",
-  description: "Vân Thư Software Enginner",
+  title: "Karlosh Yadav · Data & Front-end Engineer",
+  description:
+    "Portfolio of Karlosh Yadav – data-focused front-end engineer building inclusive, insight-driven digital products.",
   manifest: "/manifest.json",
+  keywords: [
+    "Karlosh Yadav",
+    "Portfolio",
+    "Front-end Engineer",
+    "Data Engineer",
+    "Bangalore",
+    "IISc",
+  ],
+  openGraph: {
+    title: "Karlosh Yadav · Data & Front-end Engineer",
+    description:
+      "Explore the projects, experience, and achievements of Karlosh Yadav, a data-driven front-end engineer from Bangalore.",
+    type: "website",
+    url: "https://karlosh.vercel.app/",
+  },
 };
 
 export const viewport: Viewport = {
