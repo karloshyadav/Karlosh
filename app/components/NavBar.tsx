@@ -6,6 +6,7 @@ import { useState } from "react";
 import React from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function NavBar() {
 
