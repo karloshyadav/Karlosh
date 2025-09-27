@@ -230,16 +230,3 @@ html {
 
 @media (min-width: 1024px) {
 }
-.capitalize-sentences {
-  text-transform: lowercase;
-}
-
-.capitalize-sentences::first-letter,
-.capitalize-sentences::after {
-  text-transform: uppercase;
-}
-
-.capitalize-sentences::after {
-  content: ". ";
-  font-size: 0;
-}
