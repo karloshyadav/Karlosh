@@ -2,7 +2,16 @@
 
 import withPWA from "@ducanh2912/next-pwa";
 
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.worldvectorlogo.com",
+      },
+    ],
+  },
+};
 
 export default withPWA({
   dest: "public",
