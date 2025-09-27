@@ -3,6 +3,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL ?? "/assets/cv.pdf";
+=======
 const RESUME_URL =
   process.env.NEXT_PUBLIC_RESUME_URL ??
   "/assets/cv.pdf";
@@ -35,11 +37,12 @@ export default function Hero() {
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start lg:mx-0 mx-4">
             <Link
               href={RESUME_URL}
+              download
               target="_blank"
               rel="noopener noreferrer"
               className="download-button button inline-flex items-center justify-center text-center"
             >
-              View Résumé
+              Download CV
             </Link>
 
             <div className="flex gap-4 flex-wrap justify-center md:justify-start">

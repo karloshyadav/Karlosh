@@ -1,3 +1,16 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { Input } from "@mui/base/Input";
+import { Button } from "@mui/base/Button";
+import { TextareaAutosize } from "@mui/base/TextareaAutosize";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { GiCricketBat } from "react-icons/gi";
+
+const CV_ASSET_PATH = "/assets/cv.pdf";
+
 'use client'
 import Image from "next/image";
 import { useState, FormEvent, ChangeEvent } from 'react'
@@ -9,31 +22,31 @@ import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
 
 export default function Contact() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [submitting, setSubmitting] = useState(false)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
     if (!name.trim() || !email.trim() || !message.trim()) {
-      alert('Please fill in your name, email, and message.')
-      return
+      alert("Please fill in your name, email, and message.");
+      return;
     }
-    setSubmitting(true)
+
+    setSubmitting(true);
     try {
-      // Replace with your API route or service if you add one later:
-      console.log('Form submitted:', { name, email, message })
-      // Optional: simple mailto fallback
-      const mailto = `mailto:karloshyadav18@gmail.com?subject=Portfolio%20Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nReply to: ' + email)}`
-      window.location.href = mailto
+      const mailtoLink = `mailto:karloshyadav18@gmail.com?subject=Portfolio%20Contact%20from%20${encodeURIComponent(
+        name,
+      )}&body=${encodeURIComponent(`${message}\n\nReply to: ${email}`)}`;
+      window.location.href = mailtoLink;
     } finally {
-      setSubmitting(false)
-      setName('')
-      setEmail('')
-      setMessage('')
+      setSubmitting(false);
+      setName("");
+      setEmail("");
+      setMessage("");
     }
-  }
+  };
 
   return (
     <div className="container mx-auto px-6 md:px-12 mt-20">
@@ -123,12 +136,17 @@ export default function Contact() {
                 disabled={submitting}
                 className="w-full bg-gradient-to-r from-[#945dd6] via-[#6978d1] to-[#13adc7] text-white py-4 text-lg font-semibold rounded-lg shadow-lg hover:scale-105 hover:opacity-90 transition-transform duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {submitting ? 'Sending…' : 'Send'}
+                {submitting ? "Sending…" : "Send"}
               </Button>
             </form>
             <p className="text-center text-sm text-white/80">
               Prefer a quick overview?{" "}
               <Link
+                href={CV_ASSET_PATH}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+
                 href="/assets/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"

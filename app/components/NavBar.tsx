@@ -1,4 +1,11 @@
 "use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { GiCricketBat } from "react-icons/gi";
+=======
 import Image from "next/image";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
@@ -10,11 +17,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function NavBar() {
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+const CV_ASSET_PATH = "/assets/cv.pdf";
 
+export default function NavBar() {
   return (
     <div className="text-white text-poppins mt-12 ">
       <div className="md:flex md:justify-around md:items-center grid-cols-2 grid gap-y-4 md:px-0 px-5">
@@ -77,7 +82,26 @@ export default function NavBar() {
           >
             Contact me
           </ScrollLink>
+          <Link
+            href={CV_ASSET_PATH}
+            download
+            className="md:hidden cursor-pointer rounded-full bg-white/10 px-4 py-2 text-sm font-medium tracking-wide transition hover:bg-white/20"
+            aria-label="Download Karlosh Yadav's CV"
+            prefetch={false}
+          >
+            CV
+          </Link>
         </div>
+        <div className="flex items-center justify-center gap-6 md:order-3 order-2">
+          <Link
+            href={CV_ASSET_PATH}
+            download
+            className="hidden md:inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2 text-sm font-medium tracking-wide transition hover:bg-white/20"
+            aria-label="Download Karlosh Yadav's CV"
+            prefetch={false}
+          >
+            Download CV
+          </Link>
         <div className="flex gap-8 items-center   justify-center  md:order-3 order-2">
           <Link href={"https://www.linkedin.com/in/karloshyadav/"} target="_blank" aria-label="Karlosh on LinkedIn">
             <FaLinkedin className="md:w-7 w-6 h-6 md:h-7 text-white" />
