@@ -1,10 +1,12 @@
 'use client'
+import Image from "next/image";
 import { useState, FormEvent, ChangeEvent } from 'react'
 import Link from "next/link";
 import { Input } from '@mui/base/Input';
 import { Button } from '@mui/base/Button';
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { GiCricketBat } from "react-icons/gi";
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -41,15 +43,34 @@ export default function Contact() {
         </h3>
       </div>
 
-      <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br relative overflow-hidden">
+      <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br from-[#0f1624] via-[#140f2c] to-[#1a1033] relative overflow-hidden gap-14 lg:gap-20 px-4">
         <div className="absolute inset-0 z-0" aria-hidden>
-          <div className="absolute top-10 left-10 w-32 h-32 bg-[#945dd6] opacity-30 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-10 right-20 w-40 h-40 bg-[#6978d1] opacity-20 rounded-full animate-ping"></div>
-          <div className="absolute top-1/3 left-1/2 w-20 h-20 bg-[#13adc7] opacity-25 rounded-full animate-bounce"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-[#945dd6] opacity-20 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-10 right-20 w-40 h-40 bg-[#6978d1] opacity-25 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 left-1/2 w-24 h-24 bg-[#13adc7] opacity-20 rounded-full blur-xl"></div>
+        </div>
+
+        {/* Visual Section */}
+        <div className="relative w-full max-w-md lg:max-w-none lg:w-5/12 z-10">
+          <div className="relative overflow-hidden rounded-3xl shadow-[0_40px_120px_-35px_rgba(19,173,199,0.65)] ring-1 ring-white/10">
+            <Image
+              src="/assets/bg_1.png"
+              alt="Karlosh on the field"
+              width={720}
+              height={900}
+              className="object-cover w-full h-full"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1624]/90 via-transparent to-[#0f1624]/40" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <p className="text-sm uppercase tracking-[0.25em] text-[#13adc7]/80">Always game-ready</p>
+              <h4 className="mt-2 text-2xl font-semibold">Let&apos;s build the next winning product together.</h4>
+            </div>
+          </div>
         </div>
 
         {/* Form Section */}
-        <div className="relative w-full lg:w-1/2 bg-[#1a1033] p-8 lg:p-16 flex items-center justify-center z-10 rounded-lg shadow-2xl">
+        <div className="relative w-full lg:w-1/2 bg-[#1a1033]/90 backdrop-blur-xl p-8 lg:p-16 flex items-center justify-center z-10 rounded-lg shadow-2xl">
           <div className="w-full max-w-md space-y-8">
             <div className="space-y-2">
               <h6 className="text-xl text-white tracking-wider">GET IN TOUCH</h6>
@@ -105,6 +126,17 @@ export default function Contact() {
                 {submitting ? 'Sending…' : 'Send'}
               </Button>
             </form>
+            <p className="text-center text-sm text-white/80">
+              Prefer a quick overview?{" "}
+              <Link
+                href="/assets/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#13adc7] hover:underline"
+              >
+                Download my CV
+              </Link>
+            </p>
           </div>
         </div>
       </div>
@@ -132,11 +164,21 @@ export default function Contact() {
             <a href="tel:+919151381254" className="hover:text-[#13adc7]">+91 91513 81254</a>
           </div>
           <div className="flex gap-6">
-            <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn">
+            <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn" target="_blank">
               <FaLinkedin className="md:w-7 md:h-7 w-6 h-6 text-white" />
             </Link>
-            <Link href={"https://github.com/karloshyadav"} aria-label="Karlosh on GitHub">
+            <Link href={"https://github.com/karloshyadav"} aria-label="Karlosh on GitHub" target="_blank">
               <FaGithub className="md:w-7 md:h-7 w-6 h-6 text-white" />
+            </Link>
+            <Link href={"https://www.instagram.com/karloshyadav/"} aria-label="Karlosh on Instagram" target="_blank">
+              <FaInstagram className="md:w-7 md:h-7 w-6 h-6 text-white" />
+            </Link>
+            <Link
+              href={"https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"}
+              aria-label="Karlosh on CricHeroes"
+              target="_blank"
+            >
+              <GiCricketBat className="md:w-7 md:h-7 w-6 h-6 text-white" />
             </Link>
           </div>
         </div>
