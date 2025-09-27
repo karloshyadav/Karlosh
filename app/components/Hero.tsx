@@ -80,7 +80,7 @@ export default function Hero() {
               <Image
                 src="public/assets/profile.png" // <-- put your image here
                 alt="Karlosh Yadav"
-                width={450}
+                width={600}
                 height={600}
                 className="object-cover"
                 priority
