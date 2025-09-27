@@ -3,9 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const RESUME_URL =
-  process.env.NEXT_PUBLIC_RESUME_URL ??
-  "https://www.linkedin.com/in/karloshyadav/details/featured/";
+const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL ?? "/assets/cv.pdf";
 
 export default function Hero() {
   return (
@@ -35,11 +33,12 @@ export default function Hero() {
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start lg:mx-0 mx-4">
             <Link
               href={RESUME_URL}
+              download
               target="_blank"
               rel="noopener noreferrer"
               className="download-button button inline-flex items-center justify-center text-center"
             >
-              View Résumé
+              Download CV
             </Link>
 
             <div className="flex gap-4 flex-wrap justify-center md:justify-start">
@@ -63,6 +62,22 @@ export default function Hero() {
               >
                 GitHub
               </Link>
+              <Link
+                href="https://www.instagram.com/karloshyadav/"
+                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </Link>
+              <Link
+                href="https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"
+                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CricHeroes
+              </Link>
             </div>
           </div>
         </div>
@@ -80,7 +95,7 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-full ring-1 ring-white/10 shadow-[0_40px_100px_-23px_#13adc7] bg-[#0f1624]
                             w-64 h-64 md:w-80 md:h-80 lg:w-[600px] lg:h-[600px]">
               <Image
-                src="/assets/profile.jpg"
+                src="/assets/profile.png"
                 alt="Karlosh Yadav"
                 fill
                 className="object-cover"
