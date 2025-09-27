@@ -5,6 +5,17 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { GiCricketBat } from "react-icons/gi";
+=======
+import Image from "next/image";
+import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
+import { useState } from "react";
+import React from "react";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { GiCricketBat } from "react-icons/gi";
+import { FaBars, FaTimes } from "react-icons/fa";
+
+export default function NavBar() {
 
 const CV_ASSET_PATH = "/assets/cv.pdf";
 
@@ -91,6 +102,7 @@ export default function NavBar() {
           >
             Download CV
           </Link>
+        <div className="flex gap-8 items-center   justify-center  md:order-3 order-2">
           <Link href={"https://www.linkedin.com/in/karloshyadav/"} target="_blank" aria-label="Karlosh on LinkedIn">
             <FaLinkedin className="md:w-7 w-6 h-6 md:h-7 text-white" />
           </Link>

@@ -11,6 +11,16 @@ import { GiCricketBat } from "react-icons/gi";
 
 const CV_ASSET_PATH = "/assets/cv.pdf";
 
+'use client'
+import Image from "next/image";
+import { useState, FormEvent, ChangeEvent } from 'react'
+import Link from "next/link";
+import { Input } from '@mui/base/Input';
+import { Button } from '@mui/base/Button';
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { GiCricketBat } from "react-icons/gi";
+
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -136,6 +146,10 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 download
+
+                href="/assets/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#13adc7] hover:underline"
               >
                 Download my CV

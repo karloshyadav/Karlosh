@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL ?? "/assets/cv.pdf";
+=======
+const RESUME_URL =
+  process.env.NEXT_PUBLIC_RESUME_URL ??
+  "/assets/cv.pdf";
 
 export default function Hero() {
   return (
@@ -83,6 +87,16 @@ export default function Hero() {
         </div>
 
         <div className="container-profile lg:mb-0 md:mb-12">
+          <div className="absolute inset-0 -z-10 hidden lg:block pointer-events-none">
+            <Image
+              src="/assets/bg_1.png"
+              alt="Abstract gradient backdrop"
+              fill
+              className="object-contain opacity-20"
+              sizes="(min-width: 1024px) 640px"
+              priority
+            />
+          </div>
           <div className="profile-glow-2"></div>
           <div className="profile-glow"></div>
 
