@@ -76,16 +76,17 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            <div className="profile-image aspect-square flex items-center justify-center bg-[#0f1624] shadow-[0_40px_100px_-23px_#13adc7] ring-1 ring-white/10 overflow-hidden rounded-full">
-              <Image
-                src="public/assets/profile.png" // <-- put your image here
-                alt="Karlosh Yadav"
-                width={600}
-                height={600}
-                className="object-cover"
-                priority
-              />
-            </div>
+           <div className="profile-image aspect-square flex items-center justify-center bg-[#0f1624] shadow-[0_40px_100px_-23px_#13adc7] ring-1 ring-white/10 overflow-hidden rounded-full w-[600px] h-[600px]">
+  <Image
+    src="/assets/profile.jpg"
+    alt="Karlosh Yadav"
+    width={600}
+    height={600}
+    className="object-cover"
+    priority
+  />
+</div>
+
           </motion.div>
         </div>
       </div>
