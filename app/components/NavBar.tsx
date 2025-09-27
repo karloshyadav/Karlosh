@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
@@ -17,11 +18,23 @@ export default function NavBar() {
   return (
     <div className="text-white text-poppins mt-12 ">
       <div className="md:flex md:justify-around md:items-center grid-cols-2 grid gap-y-4 md:px-0 px-5">
-        <div className="md:col-span-1 order-1 sm:order-1">
-          <p className="md:text-3xl text-2xl font-semibold tracking-wide">Karlosh Yadav</p>
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-400 hidden md:block">
-            Data & Front-end Engineer
-          </p>
+        <div className="md:col-span-1 order-1 sm:order-1 flex items-center gap-4">
+          <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden ring-2 ring-white/20 shadow-lg">
+            <Image
+              src="/assets/profile.png"
+              alt="Karlosh Yadav portrait"
+              fill
+              className="object-cover"
+              sizes="64px"
+              priority
+            />
+          </div>
+          <div>
+            <p className="md:text-3xl text-2xl font-semibold tracking-wide">Karlosh Yadav</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-400 hidden md:block">
+              Data & Front-end Engineer
+            </p>
+          </div>
         </div>
         <div className="flex md:gap-16 gap-6 md:text-lg text-nowrap text-sm font-medium md:col-span-1 order-3 sm:order-3  ">
           <ScrollLink
