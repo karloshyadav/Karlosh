@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Certifications from "./components/Certification";
 
@@ -17,10 +18,13 @@ export default function Home() {
       <section id="about">
         <About />
       </section>
+      <section id="experience">
+        <Experience />
+      </section>
       <section id="projects">
         <Projects />
       </section>
-      <section id="certifications">
+      <section id="achievements">
         <Certifications />
       </section>
       <section id="contact">
