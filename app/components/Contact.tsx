@@ -107,26 +107,32 @@ export default function Contact() {
       <div className="md:flex md:justify-around md:items-center grid-cols-2 grid gap-y-4 md:px-0 px-5 mt-40 justify-center items-center mb-8">
         <div className="order-1 sm:order-1">
           <p className="text md:text-xl text-sm text-center md:text-start text-nowrap">
-            Feel free to contact me
+            Let’s collaborate on something meaningful
           </p>
         </div>
 
         <div className="md:px-0 px-3 md:text-lg text-nowrap text-sm font-medium md:col-span-1 order-3 sm:order-3">
           <a
-            href="mailto:ykarlosh@gmail.com"
+            href="mailto:karloshyadav18@gmail.com"
             className="text-white md:text-xl text-sm"
           >
-            ykarlosh@gmail.com
+            karloshyadav18@gmail.com
           </a>
         </div>
 
-        <div className="flex gap-8 md:items-center md:justify-center justify-center md:order-3 order-2 items-end">
-          <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn">
-            <FaLinkedin className="md:w-7 md:h-7 w-6 h-6 text-white" />
-          </Link>
-          <Link href={"https://github.com/karloshyadav"} aria-label="Karlosh on GitHub">
-            <FaGithub className="md:w-7 md:h-7 w-6 h-6 text-white" />
-          </Link>
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center md:justify-center justify-center md:order-3 order-2 items-end text-white text-sm md:text-base">
+          <div className="flex flex-col items-center md:items-end">
+            <span className="opacity-70">Phone</span>
+            <a href="tel:+919151381254" className="hover:text-[#13adc7]">+91 91513 81254</a>
+          </div>
+          <div className="flex gap-6">
+            <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn">
+              <FaLinkedin className="md:w-7 md:h-7 w-6 h-6 text-white" />
+            </Link>
+            <Link href={"https://github.com/karloshyadav"} aria-label="Karlosh on GitHub">
+              <FaGithub className="md:w-7 md:h-7 w-6 h-6 text-white" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
