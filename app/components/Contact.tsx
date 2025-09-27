@@ -161,7 +161,7 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center md:justify-center justify-center md:order-3 order-2 items-end text-white text-sm md:text-base">
           <div className="flex flex-col items-center md:items-end">
             <span className="opacity-70">Phone</span>
-            <a href="tel:+919151381254" className="hover:text-[#13adc7]">+91 91513 81254</a>
+            <a href="tel:+9199999999" className="hover:text-[#13adc7]">+9199999999</a>
           </div>
           <div className="flex gap-6">
             <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn" target="_blank">
