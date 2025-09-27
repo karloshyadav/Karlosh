@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, FormEvent, ChangeEvent } from 'react'
 import Link from "next/link";
 import { Input } from '@mui/base/Input';
 import { Button } from '@mui/base/Button';
@@ -12,8 +12,8 @@ export default function Contact() {
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     if (!name.trim() || !email.trim() || !message.trim()) {
       alert('Please fill in your name, email, and message.')
       return
@@ -61,7 +61,9 @@ export default function Contact() {
                 <Input
                   id="name"
                   value={name}
-                  onChange={(_, val) => setName(val ?? '')}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    setName(event.target.value)
+                  }
                   placeholder="What's your good name?"
                   className="w-full bg-[#2a1c4a] border border-gray-600 text-white placeholder:text-gray-400 p-4 rounded-lg focus:ring-2 focus:ring-[#945dd6] focus:outline-none"
                 />
@@ -73,7 +75,9 @@ export default function Contact() {
                   id="email"
                   type="email"
                   value={email}
-                  onChange={(_, val) => setEmail(val ?? '')}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    setEmail(event.target.value)
+                  }
                   placeholder="What's your email address?"
                   className="w-full bg-[#2a1c4a] border border-gray-600 text-white placeholder:text-gray-400 p-4 rounded-lg focus:ring-2 focus:ring-[#13adc7] focus:outline-none"
                 />
@@ -84,7 +88,9 @@ export default function Contact() {
                 <TextareaAutosize
                   id="message"
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
+                    setMessage(event.target.value)
+                  }
                   minRows={5}
                   placeholder="What do you want to say?"
                   className="w-full bg-[#2a1c4a] border border-gray-600 text-white placeholder:text-gray-400 p-4 rounded-lg focus:ring-2 focus:ring-[#6978d1] focus:outline-none"
