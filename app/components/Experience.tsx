@@ -23,22 +23,11 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    role: "Executive Intern",
-    organisation: "Relanto Software",
-    duration: "Dec 2023 – Jan 2024",
-    summary:
-      "Supported a fast-moving release cycle by aligning delivery sprints with customer expectations.",
-    achievements: [
-      "Facilitated backlog refinement and wrote user stories that clarified acceptance criteria.",
-      "Analysed stakeholder feedback to prioritise roadmap experiments and report weekly progress.",
-    ],
-  },
-  {
-    role: "Intern Trainee",
-    organisation: "Soft Research Private Limited",
+    role: "Club Secretary",
+    organisation: "Soft Research Computing Society",
     duration: "Sep 2023 – Jan 2024",
     summary:
-      "Worked with the research division on data-heavy experiments and documentation initiatives.",
+      "Worked with the research division on data-heavy and documentation initiatives.",
     achievements: [
       "Automated data cleaning notebooks that reduced manual prep time by 40%.",
       "Co-authored study notes and visual reports consumed by leadership during reviews.",
@@ -46,8 +35,8 @@ const experiences: ExperienceItem[] = [
   },
   {
     role: "Academic Project Lead",
-    organisation: "CMR Institute of Technology",
-    duration: "Sep 2021 – Nov 2021",
+    organisation: "Visvesvaraya Technological University",
+    duration: "Jun 2023 – Jun 2024",
     summary:
       "Led a crop recommendation system that matches soil profiles with profitable yield suggestions.",
     achievements: [
