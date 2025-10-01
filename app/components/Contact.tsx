@@ -129,7 +129,7 @@ export default function Contact() {
             <p className="text-center text-sm text-white/80">
               Prefer a quick overview?{" "}
               <Link
-                href="/assets/cv.pdf"
+                href="/assets/cvfv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#13adc7] hover:underline"
