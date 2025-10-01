@@ -12,28 +12,28 @@ interface Achievement {
 const achievements: Achievement[] = [
   {
     title: "Academic Excellence Award",
-    organisation: "CMR Institute of Technology",
+    organisation: "Visvesvaraya Technological University",
     date: "Jul 2023",
     description:
       "Recognised among the top performers during the fifth semester for consistent academic distinction and peer mentorship.",
   },
   {
     title: "Rotaract Blood Donation Drive",
-    organisation: "CMR Institute of Technology",
+    organisation: "Visvesvaraya Technological University",
     date: "Dec 2021",
     description:
       "Coordinated logistics and volunteer outreach for a campus-wide blood donation initiative supporting local hospitals.",
   },
   {
     title: "Rotaract Community Feeding",
-    organisation: "CMR Institute of Technology",
+    organisation: "Visvesvaraya Technological University",
     date: "Jul 2022",
     description:
       "Led a student crew to organise pet nourishment drives, ensuring consistent supplies for local animal shelters.",
   },
   {
     title: "Cricket — College & District Levels",
-    organisation: "CMR Institute of Technology",
+    organisation: "Visvesvaraya Technological University",
     date: "2019 – 2023",
     description:
       "Represented college and district teams as an all-rounder, balancing athletics with full-time engineering studies.",
