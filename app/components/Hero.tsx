@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const RESUME_URL =
   process.env.NEXT_PUBLIC_RESUME_URL ??
-  "/assets/cv.pdf";
+  "/assets/cvv.pdf";
 
 export default function Hero() {
   return (
