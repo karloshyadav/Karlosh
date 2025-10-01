@@ -178,7 +178,7 @@ export default function About() {
         <div className="bg-gray-900/70 backdrop-blur-sm border border-white/5 p-6 md:mx-0 mx-4 rounded-lg lg:w-[55%] w-[90%] mb-8 space-y-4">
           <p className="gray md:text-lg text-sm">
             I’m <b>Karlosh Yadav</b>, a Bangalore-based engineer who blends <b>data science, product thinking, and front-end craft</b>.
-            After graduating top of class from CMR Institute of Technology, I’m heading to <b>IISc Bangalore</b> for my
+            After graduating top of class from Visvesvaraya Technological University, I’m heading to <b>IISc Bangalore</b> for my
             master’s in Computer Science to deepen my research toolkit.
           </p>
 
@@ -201,7 +201,7 @@ export default function About() {
             <div className="rounded-md bg-white/5 p-3">
               <p className="text-sm uppercase tracking-wide text-[#945dd6]">Recent highlights</p>
               <ul className="mt-2 space-y-1 text-sm text-[#d1d5db]">
-                <li>• Academic honour in 5th semester at CMRIT</li>
+                <li>• Academic honour in 5th semester at VTU</li>
                 <li>• Led International Student Club for 600+ peers</li>
                 <li>• Spearheaded Rotaract community initiatives</li>
               </ul>
