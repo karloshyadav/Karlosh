@@ -57,20 +57,6 @@ const projects: Project[] = [
     githubUrl: "https://github.com/karloshyadav/vehicle-care-manager",
     illustration: <VehicleCareIllustration />,
   },
-  {
-    title: "Shop Management System",
-    description:
-      "Desktop solution that digitises inventory, billing, and vendor management workflows for neighbourhood retailers.",
-    features: [
-      "Inventory tracking with reorder alerts",
-      "GST-ready billing templates",
-      "Vendor statement exports",
-    ],
-    tags: ["Java", "MySQL", "Swing", "JasperReports"],
-    duration: "Sep 2021 – Nov 2021",
-    githubUrl: "https://github.com/karloshyadav/shop-management-system",
-    illustration: <ShopManagementIllustration />,
-  },
 ];
 
 export default function Projects() {
