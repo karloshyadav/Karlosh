@@ -21,7 +21,7 @@ export default function Hero() {
           </p>
 
           <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-4">
-            Incoming M.Tech student in Computer Science at <b>IISc Bangalore</b> and recent CSE graduate from CMRIT (VTU).
+            Incoming M.Tech student in Computer Science at <b>IISc Bangalore</b> and recent CSE graduate from VTU.
             I specialise in crafting responsive interfaces, translating messy datasets into insight, and shipping
             machine-learning features that people trust.
           </p>
