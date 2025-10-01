@@ -15,7 +15,7 @@ const events = [
   {
     title: "B.E. in Computer Science & Engineering (GPA 8.75/10)",
     description:
-      "CMR Institute of Technology, VTU — Graduated with distinction; thesis on Heart Disease Prediction using ML.",
+      " VTU — Graduated with distinction; thesis on Heart Disease Prediction using ML.",
     date: "2020 – 2024",
   },
   {
