@@ -25,12 +25,6 @@ const events = [
     date: "Mar 2024 – Apr 2024",
   },
   {
-    title: "Executive Intern — Relanto Software",
-    description:
-      "Mapped user stories, supported sprint rituals, and aligned product requirements with delivery milestones.",
-    date: "Dec 2023 – Jan 2024",
-  },
-  {
     title: "Intern Trainee — Soft Research Pvt. Ltd.",
     description:
       "Explored data analysis workflows, report automation, and end-to-end documentation for R&D efforts.",
@@ -183,7 +177,7 @@ export default function About() {
           </p>
 
           <p className="gray md:text-lg text-sm">
-            Internship tours at <b>Next24 Technology</b>, <b>Relanto Software</b>, and <b>Soft Research</b> gave me a front-row seat to
+            Internship tours at <b>Next24 Technology</b> and <b>Soft Research</b> gave me a front-row seat to
             agile delivery, stakeholder alignment, and data storytelling. Whether I am building dashboards,
             experimenting with ML explainability, or organising international student communities,
             I focus on inclusive, measurable outcomes.
