@@ -7,42 +7,31 @@ import Softskills from "./Softskills";
 // Karlosh: timeline events anchored to resume
 const events = [
   {
-    title: "Incoming M.Tech CSE Scholar",
+    title: "Master of Technology in Computer Science and Engineering",
     description:
-      "Indian Institute of Science (IISc), Bangalore — Joining the 2025–27 cohort to pursue research-driven computing.",
+      "Indian Institute of Science (IISc), Bengaluru | GPA: 7/10",
     date: "2025 – 2027",
   },
   {
-    title: "B.E. in Computer Science & Engineering (GPA 8.75/10)",
+    title: "Bachelor of Engineering in Computer Science and Engineering",
     description:
-      " VTU — Graduated with distinction; thesis on Heart Disease Prediction using ML.",
-    date: "2020 – 2024",
+      "CMR Institute of Technology, Visvesvaraya Technological University | GPA: 8.75/10",
+    date: "Jun 2024",
   },
   {
-    title: "Front-End Web Development Intern — Next24 Technology",
+    title: "School Leaving Certificate Examination (Grade XII)",
     description:
-      "Delivered responsive React/Tailwind interfaces and collaborated on production releases in an agile pod.",
-    date: "Mar 2024 – Apr 2024",
+      "United Academy, National Examination Board | GPA: 8.33/10",
+    date: "2020",
   },
   {
-    title: "Intern Trainee — Soft Research Pvt. Ltd.",
+    title: "Secondary Education Examination (Grade X)",
     description:
-      "Explored data analysis workflows, report automation, and end-to-end documentation for R&D efforts.",
-    date: "Sep 2023 – Jan 2024",
-  },
-  {
-    title: "President — International Student Club (ISC)",
-    description:
-      "Amplified student voices, hosted cultural events, and built support systems for international cohorts.",
-    date: "Apr 2023 – Apr 2024",
-  },
-  {
-    title: "Secretary — Soft Research Computing Society",
-    description:
-      "Orchestrated workshops, facilitated knowledge-sharing, and maintained society operations.",
-    date: "Apr 2022 – Apr 2023",
+      "English Preparatory Secondary School, National Examination Board | GPA: 9.0/10",
+    date: "2018",
   },
 ];
+
 
 // Karlosh: tech logos (core stack)
 const technical = [
