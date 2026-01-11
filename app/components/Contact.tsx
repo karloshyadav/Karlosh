@@ -147,7 +147,7 @@ export default function Contact() {
           <p className="text-center text-sm text-white/80 mt-6">
             Prefer a quick overview?{" "}
             <Link
-              href="/assets/cvfv.pdf"
+              href="/assets/Karlosh_Yadav_Resume.pdf"
               target="_blank"
               className="text-[#13adc7] hover:underline"
             >
