@@ -7,6 +7,7 @@ interface Achievement {
   organisation: string;
   date: string;
   description: string;
+  certificateUrl?: string;
 }
 
 const achievements: Achievement[] = [
@@ -16,6 +17,7 @@ const achievements: Achievement[] = [
     date: "Jul 2023",
     description:
       "Recognised among the top performers during the fifth semester for consistent academic distinction and peer mentorship.",
+    certificateUrl: "https://drive.google.com/file/d/1SMzWVTbMGDH7M0gBW38TpgdjnNAHyeTg/view?usp=drive_link",
   },
   {
     title: "Rotaract Blood Donation Drive",
@@ -23,6 +25,7 @@ const achievements: Achievement[] = [
     date: "Dec 2021",
     description:
       "Coordinated logistics and volunteer outreach for a campus-wide blood donation initiative supporting local hospitals.",
+    certificateUrl: "https://drive.google.com/file/d/1YKXGlot59_oGyemd32vLj93QzdUcBZD1/view?usp=drive_link",
   },
   {
     title: "Rotaract Community Feeding",
@@ -37,9 +40,9 @@ const achievements: Achievement[] = [
     date: "2019 – 2023",
     description:
       "Represented college and district teams as an all-rounder, balancing athletics with full-time engineering studies.",
-  },
+    certificateUrl: "https://drive.google.com/file/d/1lMcAmMZuxLQf_XdE0yWxXOvXzlTGt-3g/view?usp=drive_link",
 
-  /* ================= Added Achievements ================= */
+  /* ================= Leadership ================= */
 
   {
     title: "President, International Student Club (ISC)",
@@ -54,6 +57,7 @@ const achievements: Achievement[] = [
     date: "Apr 2022 – Apr 2023",
     description:
       "Managed documentation, coordinated technical events, and supported research-oriented student activities.",
+     certificateUrl: "https://students.scrs.in/students/cmr-institute-of-technology-bangalore",
   },
   {
     title: "Class Representative",
@@ -61,16 +65,15 @@ const achievements: Achievement[] = [
     date: "Oct 2022 – Oct 2023",
     description:
       "Acted as a liaison between faculty and students, ensuring effective communication and academic coordination.",
+         certificateUrl: "https://drive.google.com/file/d/1EniaBMPaUCpBVd5QSQhMZac_JKn4Sf0U/view?usp=sharing",
   },
-
-  /* ================= Certifications ================= */
-
   {
     title: "Machine Learning for All",
     organisation: "Coursera",
     date: "Mar 2023",
     description:
       "Completed foundational training in machine learning concepts, applications, and real-world use cases.",
+    certificateUrl: "https://drive.google.com/file/d/1AcEbg864c4EeNirUe_93Uo4r8svpz4sx/view?usp=drive_link",
   },
   {
     title: "Copyright for Educators and Librarians",
@@ -78,6 +81,7 @@ const achievements: Achievement[] = [
     date: "Oct 2023",
     description:
       "Gained knowledge of copyright laws, fair use policies, and digital content ethics in education.",
+    certificateUrl: "https://drive.google.com/file/d/1NSOChp0wYZhck6m8l7unjTCh7xEjP_Jl/view?usp=drive_link",
   },
   {
     title: "Linux Fundamentals",
@@ -85,6 +89,7 @@ const achievements: Achievement[] = [
     date: "Aug 2022",
     description:
       "Learned Linux system basics including file systems, commands, and environment configuration.",
+    certificateUrl: "https://drive.google.com/file/d/1CMytcg_GCO5-hlR4fFBTd_9AVE6ZsvdH/view?usp=drive_link",
   },
   {
     title: "Programming Foundations with JavaScript, HTML & CSS",
@@ -92,6 +97,7 @@ const achievements: Achievement[] = [
     date: "Mar 2022",
     description:
       "Built strong foundations in web development using JavaScript, HTML, and CSS.",
+    certificateUrl: "https://drive.google.com/file/d/1vq23rHg1hlh1wlh7gQeJVHCrGQCJEPNA/view?usp=drive_link",
   },
   {
     title: "C++ for Everyone: Programming Fundamentals",
@@ -99,6 +105,7 @@ const achievements: Achievement[] = [
     date: "Sep 2021",
     description:
       "Developed problem-solving skills using C++ with a focus on core programming concepts.",
+    certificateUrl: "https://drive.google.com/file/d/1QWi5Y8HLGNfdnfGCre3JK22Ic2Znthrk/view?usp=drive_link",
   },
   {
     title: "DevOps Fundamentals",
@@ -106,31 +113,11 @@ const achievements: Achievement[] = [
     date: "Sep 2021",
     description:
       "Introduced to DevOps principles including CI/CD, automation, and development workflows.",
+    certificateUrl: "https://drive.google.com/file/d/1BIHoteD6inykJFbIpfM_NsOOcBVgLfcH/view?usp=drive_link",
   },
 
-  /* ================= Achievements, Volunteering & Hobbies ================= */
+  /* ================= Achievements & Hobbies ================= */
 
-  {
-    title: "Academic Achievement – Fifth Semester",
-    organisation: "CMR Institute of Technology",
-    date: "Jul 2023",
-    description:
-      "Secured academic distinction during the fifth semester through consistent performance.",
-  },
-  {
-    title: "Rotaract Blood Donation",
-    organisation: "CMR Institute of Technology",
-    date: "Dec 2021",
-    description:
-      "Volunteered and supported campus-wide blood donation initiatives in collaboration with local hospitals.",
-  },
-  {
-    title: "Rotaract Dog Feeding Drive",
-    organisation: "CMR Institute of Technology",
-    date: "Jul 2022",
-    description:
-      "Participated in animal welfare activities by organising dog feeding drives on campus.",
-  },
   {
     title: "Second Place – Technical Event",
     organisation: "Coders Club, CMRIT",
@@ -151,6 +138,15 @@ const achievements: Achievement[] = [
     date: "Ongoing",
     description:
       "Active competitive chess player with an approximate rating of 1000.",
+    certificateUrl: "https://www.chess.com/member/ykarlosh",
+  },
+  {
+    title: "Cricket",
+    organisation: "College & District Level",
+    date: "Ongoing",
+    description:
+      "Played at both college and district levels, showcasing cricketing skills",
+    certificateUrl: "https://drive.google.com/file/d/1lMcAmMZuxLQf_XdE0yWxXOvXzlTGt-3g/view",
   },
 ];
 
@@ -161,11 +157,9 @@ export default function Certifications() {
         <p className="text-white text-xl font-bold opacity-60">
           Celebrating learning, service, and teamwork
         </p>
-        <div className="inline-block text-center group">
-          <h3 className="mb-8 text-xl md:text-4xl text-white font-semibold">
-            Achievements & Volunteering
-          </h3>
-        </div>
+        <h3 className="mb-8 text-xl md:text-4xl text-white font-semibold">
+          Achievements & Volunteering
+        </h3>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 mt-12">
@@ -176,7 +170,7 @@ export default function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45, delay: index * 0.08 }}
-            className="rounded-2xl border border-white/10 bg-[#141326]/80 p-6 shadow-xl backdrop-blur"
+            className="rounded-2xl border border-white/10 bg-[#141326]/80 p-6 shadow-xl backdrop-blur flex flex-col"
           >
             <div className="flex items-center justify-between">
               <h4 className="text-lg font-semibold text-white max-w-[70%]">
@@ -186,12 +180,28 @@ export default function Certifications() {
                 {achievement.date}
               </span>
             </div>
+
             <p className="text-sm text-[#9ca3af] mt-3">
               {achievement.organisation}
             </p>
-            <p className="text-sm md:text-base text-[#e2e8f0] mt-4 leading-relaxed">
+
+            <p className="text-sm md:text-base text-[#e2e8f0] mt-4 leading-relaxed flex-grow">
               {achievement.description}
             </p>
+
+            {achievement.certificateUrl && (
+              <a
+                href={achievement.certificateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center justify-center rounded-xl
+                           bg-gradient-to-r from-[#13adc7] to-[#6978ff]
+                           px-4 py-2 text-sm font-medium text-white
+                           transition hover:opacity-90"
+              >
+                View Certificate
+              </a>
+            )}
           </motion.article>
         ))}
       </div>
