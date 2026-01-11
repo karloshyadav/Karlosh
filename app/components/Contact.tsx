@@ -1,58 +1,61 @@
 'use client'
-import Image from "next/image";
-import { useState, FormEvent, ChangeEvent } from 'react'
-import Link from "next/link";
-import { Input } from '@mui/base/Input';
-import { Button } from '@mui/base/Button';
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
-import { GiCricketBat } from "react-icons/gi";
+
+import Image from "next/image"
+import Link from "next/link"
+import { useState, FormEvent } from "react"
+import { Input } from "@mui/base/Input"
+import { Button } from "@mui/base/Button"
+import { TextareaAutosize } from "@mui/base/TextareaAutosize"
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa"
+import { GiCricketBat } from "react-icons/gi"
+
+const FORMSPREE_URL = "https://formspree.io/f/mdaanjvy"
 
 export default function Contact() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      alert('Please fill in your name, email, and message.')
-      return
-    }
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     setSubmitting(true)
+    setStatus("idle")
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
     try {
-      // Replace with your API route or service if you add one later:
-      console.log('Form submitted:', { name, email, message })
-      // Optional: simple mailto fallback
-      const mailto = `mailto:karloshyadav18@gmail.com?subject=Portfolio%20Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nReply to: ' + email)}`
-      window.location.href = mailto
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (res.ok) {
+        setStatus("success")
+        form.reset()
+      } else {
+        setStatus("error")
+      }
+    } catch {
+      setStatus("error")
     } finally {
       setSubmitting(false)
-      setName('')
-      setEmail('')
-      setMessage('')
     }
   }
 
   return (
     <div className="container mx-auto px-6 md:px-12 mt-20">
-      <div className="inline-block text-center group">
-        <h3 className="mb-8 text-xl md:text-4xl text-white font-semibold">
-          Contact me
-        </h3>
-      </div>
+      <h3 className="mb-8 text-xl md:text-4xl text-white font-semibold text-center">
+        Contact me
+      </h3>
 
-      <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br from-[#0f1624] via-[#140f2c] to-[#1a1033] relative overflow-hidden gap-14 lg:gap-20 px-4">
-        <div className="absolute inset-0 z-0" aria-hidden>
-          <div className="absolute top-10 left-10 w-32 h-32 bg-[#945dd6] opacity-20 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-10 right-20 w-40 h-40 bg-[#6978d1] opacity-25 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/3 left-1/2 w-24 h-24 bg-[#13adc7] opacity-20 rounded-full blur-xl"></div>
-        </div>
+      <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br from-[#0f1624] via-[#140f2c] to-[#1a1033] gap-14 lg:gap-20 px-4">
 
-        {/* Visual Section */}
-        <div className="relative w-full max-w-md lg:max-w-none lg:w-5/12 z-10">
-          <div className="relative overflow-hidden rounded-3xl shadow-[0_40px_120px_-35px_rgba(19,173,199,0.65)] ring-1 ring-white/10">
+        {/* Image Section */}
+        <div className="relative w-full max-w-md lg:w-5/12">
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/10">
             <Image
               src="/assets/bg_1.png"
               alt="Karlosh on the field"
@@ -62,125 +65,118 @@ export default function Contact() {
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0f1624]/90 via-transparent to-[#0f1624]/40" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-              <p className="text-sm uppercase tracking-[0.25em] text-[#13adc7]/80">Always game-ready</p>
-              <h4 className="mt-2 text-2xl font-semibold">Let&apos;s build the next winning product together.</h4>
+            <div className="absolute bottom-0 p-8 text-white">
+              <p className="text-sm uppercase tracking-[0.25em] text-[#13adc7]/80">
+                Always game-ready
+              </p>
+              <h4 className="mt-2 text-2xl font-semibold">
+                Let&apos;s build the next winning product together.
+              </h4>
             </div>
           </div>
         </div>
 
         {/* Form Section */}
-        <div className="relative w-full lg:w-1/2 bg-[#1a1033]/90 backdrop-blur-xl p-8 lg:p-16 flex items-center justify-center z-10 rounded-lg shadow-2xl">
-          <div className="w-full max-w-md space-y-8">
-            <div className="space-y-2">
-              <h6 className="text-xl text-white tracking-wider">GET IN TOUCH</h6>
-            </div>
+        <div className="w-full lg:w-1/2 bg-[#1a1033]/90 p-8 lg:p-16 rounded-lg shadow-2xl">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6"
+            noValidate
+          >
+            <h6 className="text-xl text-white tracking-wider">
+              GET IN TOUCH
+            </h6>
 
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-white">Your Name</label>
-                <Input
-                  id="name"
-                  value={name}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    setName(event.target.value)
-                  }
-                  placeholder="What's your good name?"
-                  className="w-full bg-[#2a1c4a] border border-gray-600 text-white placeholder:text-gray-400 p-4 rounded-lg focus:ring-2 focus:ring-[#945dd6] focus:outline-none"
-                />
-              </div>
+            <Input
+              name="name"
+              required
+              slotProps={{
+                input: {
+                  placeholder: "Your Name",
+                  className:
+                    "w-full bg-[#2a1c4a] border border-gray-600 text-white p-4 rounded-lg focus:ring-2 focus:ring-[#945dd6] focus:outline-none",
+                },
+              }}
+            />
 
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-white">Your Email</label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    setEmail(event.target.value)
-                  }
-                  placeholder="What's your email address?"
-                  className="w-full bg-[#2a1c4a] border border-gray-600 text-white placeholder:text-gray-400 p-4 rounded-lg focus:ring-2 focus:ring-[#13adc7] focus:outline-none"
-                />
-              </div>
+            <Input
+              type="email"
+              name="email"
+              required
+              slotProps={{
+                input: {
+                  placeholder: "Your Email",
+                  className:
+                    "w-full bg-[#2a1c4a] border border-gray-600 text-white p-4 rounded-lg focus:ring-2 focus:ring-[#13adc7] focus:outline-none",
+                },
+              }}
+            />
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-white">Your Message</label>
-                <TextareaAutosize
-                  id="message"
-                  value={message}
-                  onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
-                    setMessage(event.target.value)
-                  }
-                  minRows={5}
-                  placeholder="What do you want to say?"
-                  className="w-full bg-[#2a1c4a] border border-gray-600 text-white placeholder:text-gray-400 p-4 rounded-lg focus:ring-2 focus:ring-[#6978d1] focus:outline-none"
-                />
-              </div>
+            <TextareaAutosize
+              name="message"
+              required
+              minRows={5}
+              placeholder="Your Message"
+              className="w-full bg-[#2a1c4a] border border-gray-600 text-white p-4 rounded-lg focus:ring-2 focus:ring-[#6978d1] focus:outline-none"
+            />
 
-              <Button
-                type="submit"
-                disabled={submitting}
-                className="w-full bg-gradient-to-r from-[#945dd6] via-[#6978d1] to-[#13adc7] text-white py-4 text-lg font-semibold rounded-lg shadow-lg hover:scale-105 hover:opacity-90 transition-transform duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {submitting ? 'Sending…' : 'Send'}
-              </Button>
-            </form>
-            <p className="text-center text-sm text-white/80">
-              Prefer a quick overview?{" "}
-              <Link
-                href="/assets/cvfv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#13adc7] hover:underline"
-              >
-                Download my CV
-              </Link>
-            </p>
-          </div>
+            {/* Honeypot (spam protection) */}
+            <input type="text" name="_gotcha" className="hidden" />
+
+            <Button
+              type="submit"
+              disabled={submitting}
+              className="w-full bg-gradient-to-r from-[#945dd6] via-[#6978d1] to-[#13adc7] text-white py-4 text-lg font-semibold rounded-lg transition-transform hover:scale-105 disabled:opacity-60"
+            >
+              {submitting ? "Sending..." : "Send Message"}
+            </Button>
+
+            {status === "success" && (
+              <p className="text-green-400 text-center">
+                ✅ Message sent successfully!
+              </p>
+            )}
+
+            {status === "error" && (
+              <p className="text-red-400 text-center">
+                ❌ Something went wrong. Please try again.
+              </p>
+            )}
+          </form>
+
+          <p className="text-center text-sm text-white/80 mt-6">
+            Prefer a quick overview?{" "}
+            <Link
+              href="/assets/cvfv.pdf"
+              target="_blank"
+              className="text-[#13adc7] hover:underline"
+            >
+              Download my CV
+            </Link>
+          </p>
         </div>
       </div>
 
-      {/* Footer Contact + Socials */}
-      <div className="md:flex md:justify-around md:items-center grid-cols-2 grid gap-y-4 md:px-0 px-5 mt-40 justify-center items-center mb-8">
-        <div className="order-1 sm:order-1">
-          <p className="text md:text-xl text-sm text-center md:text-start text-nowrap">
-            Let’s collaborate on something meaningful
-          </p>
-        </div>
+      {/* Footer */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-32 text-white">
+        <p>Let’s collaborate on something meaningful</p>
 
-        <div className="md:px-0 px-3 md:text-lg text-nowrap text-sm font-medium md:col-span-1 order-3 sm:order-3">
-          <a
-            href="mailto:karloshyadav18@gmail.com"
-            className="text-white md:text-xl text-sm"
+        <div className="flex gap-6">
+          <Link href="https://www.linkedin.com/in/karloshyadav/" target="_blank">
+            <FaLinkedin size={24} />
+          </Link>
+          <Link href="https://github.com/karloshyadav" target="_blank">
+            <FaGithub size={24} />
+          </Link>
+          <Link href="https://www.instagram.com/karloshyadav/" target="_blank">
+            <FaInstagram size={24} />
+          </Link>
+          <Link
+            href="https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"
+            target="_blank"
           >
-            karloshyadav18@gmail.com
-          </a>
-        </div>
-
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center md:justify-center justify-center md:order-3 order-2 items-end text-white text-sm md:text-base">
-          <div className="flex flex-col items-center md:items-end">
-            <span className="opacity-70">Phone</span>
-            <a href="tel:+9199999999" className="hover:text-[#13adc7]">+9199999999</a>
-          </div>
-          <div className="flex gap-6">
-            <Link href={"https://www.linkedin.com/in/karloshyadav/"} aria-label="Karlosh on LinkedIn" target="_blank">
-              <FaLinkedin className="md:w-7 md:h-7 w-6 h-6 text-white" />
-            </Link>
-            <Link href={"https://github.com/karloshyadav"} aria-label="Karlosh on GitHub" target="_blank">
-              <FaGithub className="md:w-7 md:h-7 w-6 h-6 text-white" />
-            </Link>
-            <Link href={"https://www.instagram.com/karloshyadav/"} aria-label="Karlosh on Instagram" target="_blank">
-              <FaInstagram className="md:w-7 md:h-7 w-6 h-6 text-white" />
-            </Link>
-            <Link
-              href={"https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"}
-              aria-label="Karlosh on CricHeroes"
-              target="_blank"
-            >
-              <GiCricketBat className="md:w-7 md:h-7 w-6 h-6 text-white" />
-            </Link>
-          </div>
+            <GiCricketBat size={24} />
+          </Link>
         </div>
       </div>
     </div>
