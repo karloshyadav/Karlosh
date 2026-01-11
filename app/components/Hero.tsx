@@ -34,7 +34,7 @@ export default function Hero() {
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start lg:mx-0 mx-4">
             <Link
-              href={RESUME_URL}
+              href={public/assets/Karlosh_Yadav_Resume.pdf}
               target="_blank"
               rel="noopener noreferrer"
               className="download-button button inline-flex items-center justify-center text-center"
