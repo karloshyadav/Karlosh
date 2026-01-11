@@ -23,17 +23,6 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    role: "Club Secretary",
-    organisation: "Soft Research Computing Society",
-    duration: "Sep 2023 – Jan 2024",
-    summary:
-      "Worked with the research division on data-heavy and documentation initiatives.",
-    achievements: [
-      "Automated data cleaning notebooks that reduced manual prep time by 40%.",
-      "Co-authored study notes and visual reports consumed by leadership during reviews.",
-    ],
-  },
-  {
     role: "Academic Project Lead",
     organisation: "Visvesvaraya Technological University",
     duration: "Jun 2023 – Jun 2024",
