@@ -28,7 +28,7 @@ export default function Hero() {
 
           <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-8">
             My honours thesis delivered a <b>Heart Disease Prediction System</b> powered by Python, SMOTE, and SHAP, and internships at{" "}
-            <b>Next24 Technology</b> and <b>Relanto Software</b> sharpened my product intuition. I’m eager to contribute across data,
+            <b>Next24 Technology</b> sharpened my product intuition. I’m eager to contribute across data,
             front-end, and full-stack teams where empathy and experimentation meet.
           </p>
 
