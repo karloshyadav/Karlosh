@@ -3,97 +3,41 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const RESUME_URL =
-  process.env.NEXT_PUBLIC_RESUME_URL ??
-  "assets/Karlosh_Yadav_Resume.pdf";
+const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL ?? "assets/Karlosh_Yadav_Resume.pdf";
 
 export default function Hero() {
   return (
-    <div className="">
+    <div>
       <div className="lg:flex lg:items-center justify-center items-center flex-col flex lg:flex-row lg:justify-around lg:mt-48 mt-20">
         <div>
           <p className="text lg:mx-0 mx-4 md:text-6xl text-3xl font-semibold max-w-prose mb-6">
-            Namaste, I&apos;m <span className="whitespace-nowrap">Karlosh Yadav</span>
+            KARLOSH YADAV
           </p>
 
-          <p className="lg:mx-0 mx-4 text-white mb-6 md:text-5xl text-2xl font-semibold">
-            Builder of data-driven, human-centered products
-          </p>
-
-          <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-4">
-            Incoming M.Tech student in Computer Science at <b>IISc Bangalore</b> and recent CSE graduate from VTU.
-            I specialise in crafting responsive interfaces, translating messy datasets into insight, and shipping
-            machine-learning features that people trust.
+          <p className="lg:mx-0 mx-4 text-white mb-6 md:text-4xl text-2xl font-semibold">
+            Computer Science Engineer focused on Machine Learning and Scalable Systems
           </p>
 
           <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-8">
-            My honours thesis delivered a <b>Heart Disease Prediction System</b> powered by Python, SMOTE, and SHAP, and internships at{" "}
-            <b>Next24 Technology</b> sharpened my product intuition. I’m eager to contribute across data,
-            front-end, and full-stack teams where empathy and experimentation meet.
+            M.Tech student (CSE) at Indian Institute of Science, Bangalore (2025–2027), with a BE in CSE from
+            Visvesvaraya Technological University (2020–2024). I build reliable ML systems, design secure software,
+            and enjoy solving practical problems with data-driven engineering.
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start lg:mx-0 mx-4">
-            <Link
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="download-button button inline-flex items-center justify-center text-center"
-            >
+            <Link href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="download-button button inline-flex items-center justify-center text-center">
               View Résumé
             </Link>
-
-            <div className="flex gap-4 flex-wrap justify-center md:justify-start">
-              <Link
-                href="mailto:karloshyadav18@gmail.com"
-                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
-              >
-                Email
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/karloshyadav/"
-                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
-                target="_blank"
-              >
-                LinkedIn
-              </Link>
-              <Link
-                href="https://github.com/karloshyadav"
-                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
-                target="_blank"
-              >
-                GitHub
-              </Link>
-              <Link
-                href="https://www.instagram.com/karloshyadav/"
-                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </Link>
-              <Link
-                href="https://cricheroes.com/player-profile/9928702/karlosh-yadav/matches"
-                className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                CricHeroes
-              </Link>
-            </div>
+            <Link href="https://www.linkedin.com/in/karloshyadav" className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition" target="_blank">
+              LinkedIn
+            </Link>
+            <Link href="https://karloshyadav.com.np" className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition" target="_blank">
+              Website
+            </Link>
           </div>
         </div>
 
         <div className="container-profile lg:mb-0 md:mb-12">
-          <div className="absolute inset-0 -z-10 hidden lg:block pointer-events-none">
-            <Image
-              src="/assets/bg_1.png"
-              alt="Abstract gradient backdrop"
-              fill
-              className="object-contain opacity-20"
-              sizes="(min-width: 1024px) 640px"
-              priority
-            />
-          </div>
           <div className="profile-glow-2"></div>
           <div className="profile-glow"></div>
 
@@ -102,23 +46,19 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            {/* Big circular avatar: ~600x600 on large screens, smaller on mobile */}
-            <div className="relative overflow-hidden rounded-full ring-1 ring-white/10 shadow-[0_40px_100px_-23px_#13adc7] bg-[#0f1624]
-                            w-64 h-64 md:w-80 md:h-80 lg:w-[600px] lg:h-[600px]">
+            <div className="relative overflow-hidden rounded-full ring-1 ring-white/10 shadow-[0_40px_100px_-23px_#13adc7] bg-[#0f1624] w-64 h-64 md:w-80 md:h-80 lg:w-[480px] lg:h-[480px]">
               <Image
                 src="/assets/profile.png"
                 alt="Karlosh Yadav"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 600px, (min-width: 768px) 320px, 256px"
+                sizes="(min-width: 1024px) 480px, (min-width: 768px) 320px, 256px"
                 priority
               />
             </div>
           </motion.div>
         </div>
       </div>
-
-      <div className="md:ml-40 md:mt-0 mt-44 md:mx-0 mx-4"></div>
     </div>
   );
 }

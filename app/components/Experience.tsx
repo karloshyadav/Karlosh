@@ -2,77 +2,28 @@
 
 import { motion } from "framer-motion";
 
-interface ExperienceItem {
-  role: string;
-  organisation: string;
-  duration: string;
-  summary: string;
-  achievements: string[];
-}
-
-const experiences: ExperienceItem[] = [
-  {
-    role: "Front-End Web Development Intern",
-    organisation: "Next24 Technology Pvt Ltd, Bangalore",
-    duration: "Mar 2024 – Apr 2024",
-    summary:
-      "Embedded with the product team to level-up the company’s SaaS dashboards and marketing sites.",
-    achievements: [
-      "Shipped responsive React + Tailwind views that improved lighthouse scores by 18%.",
-      "Partnered with designers and QA to iterate on accessibility and micro-interaction details.",
-    ],
-  },
-  {
-    role: "Academic Project Lead",
-    organisation: "Visvesvaraya Technological University",
-    duration: "Jun 2023 – Jun 2024",
-    summary:
-      "Led a crop recommendation system that matches soil profiles with profitable yield suggestions.",
-    achievements: [
-      "Engineered end-to-end pipeline from data ingestion to inference dashboards.",
-      "Presented findings to faculty panel and captured feedback for future iterations.",
-    ],
-  },
+const profileHighlights = [
+  { label: "GRE", value: "333 / 340" },
+  { label: "Languages", value: "English, Hindi, Maithili, Nepali" },
+  { label: "Focus Areas", value: "Machine Learning, Databases, OOP, DSA" },
 ];
 
 export default function Experience() {
   return (
     <div className="md:ml-40 px-4 md:px-0 lg:mt-20">
-      <h3 className="mb-8 text-xl md:text-4xl text-white font-semibold">Experience</h3>
-      <p className="gray max-w-3xl mb-10 text-sm md:text-lg">
-        A snapshot of the teams and missions that have shaped how I build — from agile shipping sprints to
-        research-driven explorations. Each role strengthened my empathy for users and the craft behind
-        maintainable systems.
-      </p>
-
-      <div className="space-y-8">
-        {experiences.map((experience, index) => (
+      <h3 className="mb-8 text-xl md:text-4xl text-white font-semibold">Profile Snapshot</h3>
+      <div className="grid md:grid-cols-3 gap-6">
+        {profileHighlights.map((item, index) => (
           <motion.article
-            key={experience.role}
+            key={item.label}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45, ease: "easeOut", delay: index * 0.1 }}
-            className="border border-white/10 bg-[#111126]/80 rounded-2xl p-6 md:p-8 shadow-lg backdrop-blur"
+            transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.08 }}
+            className="border border-white/10 bg-[#111126]/80 rounded-2xl p-6 shadow-lg backdrop-blur"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-              <div>
-                <h4 className="text-2xl text-white font-semibold">{experience.role}</h4>
-                <p className="text-sm md:text-base text-[#9ca3af]">{experience.organisation}</p>
-              </div>
-              <span className="text-sm font-medium text-[#13adc7]">{experience.duration}</span>
-            </div>
-
-            <p className="gray mt-4 md:text-base text-sm">{experience.summary}</p>
-
-            <ul className="mt-4 space-y-2">
-              {experience.achievements.map((achievement, i) => (
-                <li key={achievement} className="flex gap-2 text-sm md:text-base text-[#e2e8f0]">
-                  <span className="text-[#945dd6] mt-1">●</span>
-                  <span>{achievement}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="text-[#13adc7] text-sm uppercase tracking-wider">{item.label}</p>
+            <p className="text-white text-lg mt-3">{item.value}</p>
           </motion.article>
         ))}
       </div>
