@@ -54,10 +54,8 @@ export default function Contact() {
         </div>
 
         <div className="w-full lg:w-1/2 bg-[#1a1033]/90 p-8 lg:p-16 rounded-lg shadow-2xl">
-          <p className="text-white mb-2">Phone: <span className="text-[#13adc7]">+91 9151381254</span></p>
           <p className="text-white mb-2">Email: <span className="text-[#13adc7]">karloshyadav@iisc.ac.in</span></p>
           <p className="text-white mb-2">LinkedIn: <Link href="https://linkedin.com/in/karloshyadav" target="_blank" className="text-[#13adc7]">linkedin.com/in/karloshyadav</Link></p>
-          <p className="text-white mb-8">Website: <Link href="https://karloshyadav.com.np" target="_blank" className="text-[#13adc7]">karloshyadav.com.np</Link></p>
 
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
             <Input name="name" required slotProps={{ input: { placeholder: "Your Name", className: "w-full bg-[#2a1c4a] border border-gray-600 text-white p-4 rounded-lg focus:ring-2 focus:ring-[#945dd6] focus:outline-none" } }} />
