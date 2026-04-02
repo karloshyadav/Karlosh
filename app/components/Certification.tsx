@@ -10,11 +10,7 @@ interface Item {
 }
 
 const certifications: Item[] = [
-  {
-    title: "Graduate Record Examination",
-    organisation: "ETS",
-    description: "Score: 333/340.",
-  },
+
   {
     title: "C++ for Everyone",
     organisation: "University of California",
