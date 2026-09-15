@@ -57,19 +57,7 @@ export default function Contact() {
           <p className="text-white mb-2">Email: <span className="text-[#13adc7]">karloshyadav@iisc.ac.in</span></p>
           <p className="text-white mb-2">LinkedIn: <Link href="https://linkedin.com/in/karloshyadav" target="_blank" className="text-[#13adc7]">linkedin.com/in/karloshyadav</Link></p>
 
-          <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-            <Input name="name" required slotProps={{ input: { placeholder: "Your Name", className: "w-full bg-[#2a1c4a] border border-gray-600 text-white p-4 rounded-lg focus:ring-2 focus:ring-[#945dd6] focus:outline-none" } }} />
-            <Input type="email" name="email" required slotProps={{ input: { placeholder: "Your Email", className: "w-full bg-[#2a1c4a] border border-gray-600 text-white p-4 rounded-lg focus:ring-2 focus:ring-[#13adc7] focus:outline-none" } }} />
-            <TextareaAutosize name="message" required minRows={5} placeholder="Your Message" className="w-full bg-[#2a1c4a] border border-gray-600 text-white p-4 rounded-lg focus:ring-2 focus:ring-[#6978d1] focus:outline-none" />
-            <input type="text" name="_gotcha" className="hidden" />
-
-            <Button type="submit" disabled={submitting} className="w-full bg-gradient-to-r from-[#945dd6] via-[#6978d1] to-[#13adc7] text-white py-4 text-lg font-semibold rounded-lg transition-transform hover:scale-105 disabled:opacity-60">
-              {submitting ? "Sending..." : "Send Message"}
-            </Button>
-
-            {status === "success" && <p className="text-green-400 text-center">✅ Message sent successfully!</p>}
-            {status === "error" && <p className="text-red-400 text-center">❌ Something went wrong. Please try again.</p>}
-          </form>
+          
         </div>
       </div>
     </div>
