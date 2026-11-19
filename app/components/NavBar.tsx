@@ -1,47 +1,71 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { Link as ScrollLink } from "react-scroll";
-import React from "react";
-import { FaLinkedin } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 export default function NavBar() {
   return (
-    <div className="text-white text-poppins mt-12">
-      <div className="md:flex md:justify-around md:items-center grid-cols-2 grid gap-y-4 md:px-0 px-5">
-        <div className="md:col-span-1 order-1 sm:order-1 flex items-center gap-4">
-          <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden ring-2 ring-white/20 shadow-lg">
-            <Image
-              src="/assets/profile.png"
-              alt="Karlosh Yadav portrait"
-              fill
-              className="object-cover"
-              sizes="64px"
-              priority
-            />
-          </div>
-          <div>
-            <p className="md:text-3xl text-2xl font-semibold tracking-wide">Karlosh Yadav</p>
-            <p className="text-xs uppercase tracking-[0.3em] text-gray-400 hidden md:block">
-              M.Tech CSE @ IISc Bangalore
-            </p>
-          </div>
-        </div>
-
-        <div className="flex md:gap-12 gap-6 md:text-lg text-nowrap text-sm font-medium md:col-span-1 order-3 sm:order-3">
-          <ScrollLink to="about" smooth duration={500} className="cursor-pointer">About</ScrollLink>
-          <ScrollLink to="education" smooth duration={500} className="cursor-pointer">Education</ScrollLink>
-          <ScrollLink to="projects" smooth duration={500} className="cursor-pointer">Projects</ScrollLink>
-          <ScrollLink to="achievements" smooth duration={500} className="cursor-pointer">Achievements</ScrollLink>
-          <ScrollLink to="contact" smooth duration={500} className="cursor-pointer">Contact</ScrollLink>
-        </div>
-
-        <div className="flex gap-8 items-center justify-center md:order-3 order-2">
-          <Link href="https://www.linkedin.com/in/karloshyadav" target="_blank" aria-label="Karlosh on LinkedIn">
-            <FaLinkedin className="md:w-7 w-6 h-6 md:h-7 text-white" />
-          </Link>
-        </div>
+    <nav className="nav" aria-label="Primary">
+      <a
+        href="#top"
+        style={{ display: "inline-flex", alignItems: "center", gap: "12px" }}
+        aria-label="Karlosh Yadav, back to top"
+      >
+        <svg width="30" height="34" viewBox="0 0 30 34" aria-hidden="true">
+          <path
+            d="M2 33V15a13 13 0 0 1 26 0v18"
+            fill="none"
+            stroke="var(--accent)"
+            strokeWidth="1.6"
+          />
+          <path
+            d="M8 33V16a7 7 0 0 1 14 0v17"
+            fill="none"
+            stroke="var(--ink)"
+            strokeWidth="1.2"
+            opacity=".55"
+          />
+        </svg>
+        <span className="serif" style={{ fontSize: "26px", lineHeight: "1" }}>
+          Karlosh Yadav
+        </span>
+      </a>
+      <div className="links">
+        <a className="lk" href="#experience">
+          Experience
+        </a>
+        <a className="lk" href="#work">
+          Work
+        </a>
+        <a className="lk" href="#about">
+          About
+        </a>
+        <a className="lk" href="#education">
+          Education
+        </a>
+        <a className="lk" href="#beyond">
+          Beyond
+        </a>
+        <a className="lk" href="#contact">
+          Contact
+        </a>
       </div>
-    </div>
+      <div className="navr">
+        <ThemeToggle />
+        <a
+          className="btn"
+          href="/assets/Karlosh_Yadav_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Résumé
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+            <path
+              d="M2 10 10 2M4 2h6v6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+          </svg>
+        </a>
+      </div>
+    </nav>
   );
 }
