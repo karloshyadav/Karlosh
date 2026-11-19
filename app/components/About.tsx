@@ -1,81 +1,91 @@
-"use client";
-
-import { motion } from "framer-motion";
-import "../../public/assets/style.css";
-
-const education = [
-  {
-    title: "Master of Technology, Computer Science and Engineering",
-    description: "Indian Institute of Science, Bangalore | CGPA: 7.0/10",
-    date: "Aug 2025 – Jun 2027",
-  },
-  {
-    title: "Bachelor of Engineering, Computer Science and Engineering",
-    description: "Visvesvaraya Technological University | CGPA: 8.75/10",
-    date: "Aug 2020 – Jun 2024",
-  },
-];
-
-const skills = [
-  "C++",
-  "Python",
-  "MySQL",
-  "Machine Learning",
-  "Data Structures and Algorithms",
-  "Software Development Life Cycle",
-  "Database Management",
-  "Object-Oriented Programming",
-  "System Design (Basics)",
-];
-
 export default function About() {
   return (
-    <div>
-      <h2 className="md:text-4xl text-xl text-white font-semibold mb-8 md:mt-48 mt-20">About</h2>
-
-      <motion.div
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-gray-900/70 backdrop-blur-sm border border-white/5 p-6 rounded-lg lg:w-[70%] w-[95%] mb-8"
-      >
-        <p className="gray md:text-lg text-sm leading-relaxed">
-          I am a computer science engineer focused on machine learning, data-centric systems, and dependable software
-          engineering. My recent work includes benchmarking deep learning models for brain tumor classification,
-          building ensemble-based heart disease prediction, and implementing core ML algorithms from scratch.
-        </p>
-      </motion.div>
-
-      <section id="education">
-        <h3 className="mb-6 text-xl md:text-3xl text-white font-semibold">Education</h3>
-        <div className="timeline" aria-label="Education timeline">
-          <ul>
-            {education.map((event) => (
-              <li key={event.title}>
-                <div className="content-working">
-                  <h3 className="text-xl text-gray-200">{event.title}</h3>
-                  <p className="text-sm text-gray-400">{event.description}</p>
-                </div>
-                <div className="time">
-                  <h4 className="text-gray-300">{event.date}</h4>
-                </div>
-              </li>
-            ))}
-          </ul>
+    <section
+      id="about"
+      className="sec"
+      style={{ borderTop: "1px solid var(--line)" }}
+    >
+      <div className="wrap">
+        <div className="ag">
+          <div className="rv">
+            <p className="mono acc" style={{ marginBottom: "24px" }}>
+              (03) About
+            </p>
+            <p
+              className="serif"
+              style={{
+                fontSize: "clamp(34px,4.4vw,64px)",
+                lineHeight: "1.08",
+                letterSpacing: "-.015em",
+              }}
+            >
+              I build machine learning, data-centric systems and{" "}
+              <span style={{ fontStyle: "italic", color: "var(--accent)" }}>
+                dependable
+              </span>{" "}
+              software, and I like it best when the numbers hold up.
+            </p>
+            <p
+              className="muted"
+              style={{ marginTop: "32px", maxWidth: "58ch" }}
+            >
+              My recent work includes benchmarking deep learning models for
+              brain tumor classification, building ensemble-based heart disease
+              prediction, implementing core ML algorithms from scratch, and
+              automating theorem proving in Lean 4 with retrieval-augmented
+              autoformalization.
+            </p>
+          </div>
+          <div className="sg rv">
+            <div>
+              <h4 className="mono">Languages &amp; data</h4>
+              <div className="tags">
+                <span className="sp">C++</span>
+                <span className="sp">Python</span>
+                <span className="sp">MySQL</span>
+              </div>
+            </div>
+            <div>
+              <h4 className="mono">Core</h4>
+              <div className="tags">
+                <span className="sp">Machine Learning</span>
+                <span className="sp">Data Structures and Algorithms</span>
+                <span className="sp">Object-Oriented Programming</span>
+              </div>
+            </div>
+            <div>
+              <h4 className="mono">Engineering</h4>
+              <div className="tags">
+                <span className="sp">Software Development Life Cycle</span>
+                <span className="sp">Database Management</span>
+                <span className="sp">System Design (Basics)</span>
+              </div>
+            </div>
+            <div>
+              <h4 className="mono">Used in my projects</h4>
+              <div className="tags">
+                <span className="tag">Lean 4</span>
+                <span className="tag">InternLM2</span>
+                <span className="tag">PyPantograph</span>
+                <span className="tag">ByT5</span>
+                <span className="tag">TensorFlow</span>
+                <span className="tag">YOLOv8</span>
+                <span className="tag">ResNet50</span>
+                <span className="tag">MobileNetV3</span>
+                <span className="tag">Scikit-learn</span>
+                <span className="tag">XGBoost</span>
+                <span className="tag">SMOTE</span>
+                <span className="tag">GridSearchCV</span>
+                <span className="tag">NumPy</span>
+                <span className="tag">JWT</span>
+                <span className="tag">RBAC</span>
+                <span className="tag">bcrypt</span>
+                <span className="tag">CORS</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-
-      <section className="mt-12">
-        <h3 className="mb-6 text-xl md:text-3xl text-white font-semibold">Technical Skills</h3>
-        <div className="flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <span key={skill} className="px-4 py-2 rounded-full bg-white/10 text-[#e2e8f0] text-sm md:text-base">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

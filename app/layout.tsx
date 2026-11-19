@@ -1,38 +1,52 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
+import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Cursor from "./components/Cursor";
 import { Analytics } from "@vercel/analytics/react";
 
-const poppins = Poppins({
+const serif = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Karlosh Yadav · Data & Front-end Engineer",
+  title: "Karlosh Yadav · Machine Learning & Systems Engineer",
   description:
-    "Portfolio of Karlosh Yadav – data-focused front-end engineer building inclusive, insight-driven digital products.",
+    "Portfolio of Karlosh Yadav – M.Tech CSE at IISc Bangalore, focused on machine learning, theorem proving and scalable systems. Software Engineer Intern at Google, 2026.",
   manifest: "/manifest.json",
   keywords: [
     "Karlosh Yadav",
     "Portfolio",
-    "Front-end Engineer",
-    "Data Engineer",
+    "Machine Learning",
+    "Autoformalization",
+    "Lean 4",
+    "Software Engineer",
     "Bangalore",
     "IISc",
   ],
   openGraph: {
-    title: "Karlosh Yadav · Data & Front-end Engineer",
+    title: "Karlosh Yadav · Machine Learning & Systems Engineer",
     description:
-      "Explore the projects, experience, and achievements of Karlosh Yadav, a data-driven front-end engineer from Bangalore.",
+      "Projects, experience and achievements of Karlosh Yadav, M.Tech CSE at IISc Bangalore.",
     type: "website",
-    url: "https://karlosh.vercel.app/",
+    url: "https://karloshyadav.com.np",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#0C0B0A",
 };
 
 export default function RootLayout({
@@ -41,9 +55,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-back font-poppins">
-      <body className={poppins.className}>
-        <Cursor />
+    <html
+      lang="en"
+      className={`${serif.variable} ${sans.variable} ${mono.variable}`}
+    >
+      <body>
         <Analytics />
         {children}
       </body>

@@ -1,64 +1,240 @@
-'use client';
-import Link from "next/link";
-import { motion } from "framer-motion";
-import Image from "next/image";
+"use client";
 
-const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL ?? "assets/Karlosh_Yadav_Resume.pdf";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import type { MouseEvent } from "react";
+import NavBar from "./NavBar";
 
 export default function Hero() {
+  const [pos, setPos] = useState({ x: 420, y: 260 });
+  const raf = useRef(0);
+
+  useEffect(() => {
+    return () => {
+      if (raf.current) cancelAnimationFrame(raf.current);
+    };
+  }, []);
+
+  const onMove = (e: MouseEvent<HTMLElement>) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    if (raf.current) return;
+    raf.current = requestAnimationFrame(() => {
+      raf.current = 0;
+      setPos({ x, y });
+    });
+  };
+
   return (
-    <div>
-      <div className="lg:flex lg:items-center justify-center items-center flex-col flex lg:flex-row lg:justify-around lg:mt-48 mt-20">
-        <div>
-          <p className="text lg:mx-0 mx-4 md:text-6xl text-3xl font-semibold max-w-prose mb-6">
-            KARLOSH YADAV
-          </p>
+    <header
+      id="top"
+      className="hero"
+      onMouseMove={onMove}
+      style={{
+        backgroundImage: `radial-gradient(560px circle at ${Math.round(pos.x)}px ${Math.round(pos.y)}px, var(--glow), transparent 70%)`,
+      }}
+    >
+      <div className="wrap">
+        <NavBar />
 
-          <p className="lg:mx-0 mx-4 text-white mb-6 md:text-4xl text-2xl font-semibold">
-            Computer Science Engineer focused on Machine Learning and Scalable Systems
-          </p>
-
-          <p className="lg:mx-0 mx-4 max-w-prose gray font-medium lg:text-lg text-sm mb-8">
-            M.Tech student (CSE) at Indian Institute of Science, Bangalore (2025–2027), with a BE in CSE from
-            Visvesvaraya Technological University (2020–2024). I build reliable ML systems, design secure software,
-            and enjoy solving practical problems with data-driven engineering.
-          </p>
-
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start lg:mx-0 mx-4">
-            <Link href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="download-button button inline-flex items-center justify-center text-center">
-              View Résumé
-            </Link>
-            <Link href="https://www.linkedin.com/in/karloshyadav" className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition" target="_blank">
-              LinkedIn
-            </Link>
-            <Link href="https://karloshyadav.com.np" className="px-5 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition" target="_blank">
-              Website
-            </Link>
+        <div className="hgrid">
+          <div>
+            <p className="mono acc in1" style={{ marginBottom: "28px" }}>
+              M.Tech CSE · Indian Institute of Science, Bengaluru · 2025–27
+            </p>
+            <h1
+              className="serif"
+              style={{
+                fontSize: "clamp(68px,10.4vw,168px)",
+                letterSpacing: "-.035em",
+              }}
+            >
+              <span className="nm">
+                <span>Karlosh</span>
+              </span>
+              <span className="nm l2">
+                <span style={{ fontStyle: "italic", color: "var(--accent)" }}>
+                  Yadav
+                </span>
+              </span>
+            </h1>
+            <p
+              className="in1"
+              style={{
+                marginTop: "clamp(24px,3vw,40px)",
+                fontSize: "clamp(21px,2.3vw,30px)",
+                lineHeight: "1.3",
+                maxWidth: "24ch",
+                fontWeight: "500",
+                letterSpacing: "-.01em",
+              }}
+            >
+              Computer science engineer focused on machine learning and scalable
+              systems.
+            </p>
+            <p
+              className="in2 muted"
+              style={{ marginTop: "20px", maxWidth: "56ch" }}
+            >
+              I build reliable ML systems, design secure software, and enjoy
+              solving practical problems with data-driven engineering.
+            </p>
+            <p
+              className="mono in2"
+              style={{
+                marginTop: "20px",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}
+            >
+              <span className="acc" aria-hidden="true">
+                ●
+              </span>
+              Software Engineer Intern · Google · May–Jul 2026
+            </p>
+            <div
+              className="in3"
+              style={{
+                display: "flex",
+                gap: "14px",
+                flexWrap: "wrap",
+                marginTop: "36px",
+              }}
+            >
+              <a className="btn primary" href="#work">
+                See selected work
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 1v10M2 7l4 4 4-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+              </a>
+              <a
+                className="btn"
+                href="https://www.linkedin.com/in/karloshyadav"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 10 10 2M4 2h6v6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className="container-profile lg:mb-0 md:mb-12">
-          <div className="profile-glow-2"></div>
-          <div className="profile-glow"></div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          >
-            <div className="relative overflow-hidden rounded-full ring-1 ring-white/10 shadow-[0_40px_100px_-23px_#13adc7] bg-[#0f1624] w-64 h-64 md:w-80 md:h-80 lg:w-[480px] lg:h-[480px]">
+          <div className="hv">
+            <svg className="arcs" viewBox="0 0 600 700" aria-hidden="true">
+              <path
+                className="arc a0"
+                pathLength="1"
+                d="M0 700V320A300 300 0 0 1 600 320V700"
+              />
+              <path
+                className="arc"
+                pathLength="1"
+                style={{ animationDelay: ".15s" }}
+                d="M28 700V328A272 272 0 0 1 572 328V700"
+              />
+              <path
+                className="arc"
+                pathLength="1"
+                style={{ animationDelay: ".3s" }}
+                d="M56 700V336A244 244 0 0 1 544 336V700"
+              />
+              <path
+                className="arc"
+                pathLength="1"
+                style={{ animationDelay: ".45s" }}
+                d="M84 700V344A216 216 0 0 1 516 344V700"
+              />
+              <path
+                className="arc"
+                pathLength="1"
+                style={{ animationDelay: ".6s" }}
+                d="M112 700V352A188 188 0 0 1 488 352V700"
+              />
+            </svg>
+            <div className="pt">
               <Image
-                src="/assets/profile.png"
-                alt="Karlosh Yadav"
+                src="/assets/portrait.jpg"
+                alt="Portrait of Karlosh Yadav standing by a misty lake"
                 fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 480px, (min-width: 768px) 320px, 256px"
+                sizes="(min-width: 1000px) 340px, 60vw"
                 priority
               />
             </div>
-          </motion.div>
+            <div className="mini">
+              <Image
+                src="/assets/iisc-web.jpg"
+                alt="The main building of the Indian Institute of Science"
+                fill
+                sizes="180px"
+              />
+            </div>
+            <span className="fl mono" style={{ right: "-2%", top: "22%" }}>
+              <i></i>IISc · Bengaluru
+            </span>
+            <span
+              className="fl mono"
+              style={{ right: "2%", bottom: "16%", animationDelay: "-3s" }}
+            >
+              <i></i>ML · Systems
+            </span>
+          </div>
+        </div>
+
+        <div className="stats">
+          <div className="stat">
+            <p className="n serif">
+              333<small>/340</small>
+            </p>
+            <p className="mono muted" style={{ marginTop: "10px" }}>
+              GRE score
+            </p>
+          </div>
+          <div className="stat">
+            <p className="n serif">
+              8.75<small>/10</small>
+            </p>
+            <p className="mono muted" style={{ marginTop: "10px" }}>
+              B.E. CGPA · VTU
+            </p>
+          </div>
+          <div className="stat">
+            <p className="n serif">05</p>
+            <p className="mono muted" style={{ marginTop: "10px" }}>
+              Projects shipped
+            </p>
+          </div>
+          <div className="stat">
+            <p className="n serif">04</p>
+            <p className="mono muted" style={{ marginTop: "10px" }}>
+              Languages spoken
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
